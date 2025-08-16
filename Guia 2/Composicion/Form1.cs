@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Composicion.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,35 @@ namespace Composicion
         public Form1()
         {
             InitializeComponent();
+        }
+
+        Servicio servicio = new Servicio();
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            CargaUsuario cargaUsuario = new CargaUsuario();
+            cargaUsuario.ShowDialog();
+
+            int dni = Convert.ToInt32(cargaUsuario.txtDNI.Text);
+            string nombre = cargaUsuario.txtNOMBRE.Text;
+
+            if (cargaUsuario.DialogResult == DialogResult.OK) 
+            {
+                if (servicio.AgregarPersona(dni, nombre))
+                {
+                    MessageBox.Show("Agregado con exito");
+                }
+            }
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+
+            for (int i = 0; i < servicio.VerCantidadPersonas(); i++)
+            {
+                listBox1.Items.Add(servicio.VerPersona(i).Describir());
+            }
         }
     }
 }
