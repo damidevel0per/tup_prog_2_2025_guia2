@@ -46,5 +46,33 @@ namespace Composicion
                 listBox1.Items.Add(servicio.VerPersona(i).Describir());
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int dni = Convert.ToInt32(txtDNIFORMPRINC.Text);
+            if (servicio.VerPersonaPorDNI(dni) != null)
+            {
+                MessageBox.Show("Persona encontrada: " + servicio.VerPersonaPorDNI(dni).Describir());
+            }
+
+            txtDNIFORMPRINC.Text = "";
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int dni = Convert.ToInt32(txtDNIFORMPRINC.Text);
+
+            Persona personaAeliminar = servicio.VerPersonaPorDNI(dni);
+            if (personaAeliminar != null)
+            {
+                servicio.EliminarPersona(personaAeliminar);
+                MessageBox.Show("Persona Eliminada: " + personaAeliminar.Describir());
+            }
+            else
+            {
+                MessageBox.Show("Persona no existente");
+            }
+
+        }
     }
 }

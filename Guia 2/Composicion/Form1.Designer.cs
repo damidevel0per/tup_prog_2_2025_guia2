@@ -33,14 +33,16 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtDNIFORMPRINC = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(374, 38);
+            this.listBox1.Location = new System.Drawing.Point(374, 12);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(414, 212);
+            this.listBox1.Size = new System.Drawing.Size(414, 251);
             this.listBox1.TabIndex = 0;
             // 
             // btnAgregar
@@ -65,27 +67,47 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(15, 147);
+            this.btnBuscar.Location = new System.Drawing.Point(15, 199);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(320, 47);
+            this.btnBuscar.Size = new System.Drawing.Size(157, 47);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(15, 203);
+            this.btnEliminar.Location = new System.Drawing.Point(178, 199);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(320, 47);
+            this.btnEliminar.Size = new System.Drawing.Size(157, 47);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // txtDNIFORMPRINC
+            // 
+            this.txtDNIFORMPRINC.Location = new System.Drawing.Point(15, 173);
+            this.txtDNIFORMPRINC.Name = "txtDNIFORMPRINC";
+            this.txtDNIFORMPRINC.Size = new System.Drawing.Size(320, 20);
+            this.txtDNIFORMPRINC.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "DNI";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 279);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDNIFORMPRINC);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnListar);
@@ -94,6 +116,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -104,6 +127,8 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtDNIFORMPRINC;
+        private System.Windows.Forms.Label label1;
     }
 }
 

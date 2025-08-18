@@ -58,11 +58,11 @@ namespace Composicion.Models
         public void EliminarPersona(Persona persona)
         {
             Persona personaAEliminar = VerPersonaPorDNI(persona.DNI);
-
             if (personaAEliminar != null)
             {
                 lista.Remove(persona);
             }
+
         }
 
 
